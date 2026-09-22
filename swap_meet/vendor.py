@@ -24,7 +24,6 @@ class Vendor:
         return None
 
     def swap_items(self, other_vendor, my_item, their_item):
-        print('my_item', my_item, 'other_item', their_item)
         if not self.get_by_id(my_item.id) or not other_vendor.get_by_id(their_item.id):
             return False
         
@@ -40,7 +39,6 @@ class Vendor:
             return False
         first_item_in_my_inventory = self.inventory[0]
         first_item_in_others_inventory = other_vendor.inventory[0]
-        print(first_item_in_others_inventory, 'first', self.inventory)
 
         self.swap_items(other_vendor, first_item_in_my_inventory, first_item_in_others_inventory)
         return True
