@@ -12,3 +12,11 @@ class Item:
 
     def __str__(self):
         return(f"An object of type Item with id {self.id}.")
+
+    def condition_description(self):
+        if self.condition < 2:
+            return "It's a no from me"
+        elif self.condition < 4:
+            return "Maybe"
+        else:
+            return"Score!"
