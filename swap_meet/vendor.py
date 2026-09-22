@@ -29,6 +29,14 @@ class Vendor:
         other_vendor.add(my_item)
         self.add(their_item)
         other_vendor.remove(their_item)
-        print('after', other_vendor.inventory)
 
+        return True
+
+    def swap_first_item(self, other_vendor):
+        if len(self.inventory) == 0 or len(other_vendor.inventory) == 0:
+            return False
+        first_item_in_my_inventory = self.inventory[0]
+        first_item_in_others_inventory = other_vendor.inventory[0]
+
+        self.swap_items(other_vendor, first_item_in_my_inventory, first_item_in_others_inventory)
         return True
