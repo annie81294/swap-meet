@@ -1,4 +1,4 @@
-from .item import Item
+#from .item import Item
 
 class Vendor:
     def __init__(self, inventory=None):
@@ -53,14 +53,17 @@ class Vendor:
         return category_objects
 
     def get_best_by_category(self, category):
-        current_best_condition = 0
-        best_object_so_far = Item
+        #current_best_condition = 0
+        current_best_condition = None
+        #best_object_so_far = Item
+        best_object_so_far = None
         category_objects = self.get_by_category(category)
+        
         if len(category_objects) == 0:
             return None
 
         for object in category_objects:
-            if object.condition > current_best_condition:
+            if best_object_so_far is None or object.condition > current_best_condition:
                 best_object_so_far = object
                 current_best_condition = object.condition
 
