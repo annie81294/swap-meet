@@ -2,7 +2,7 @@ import uuid
 from swap_meet.item import Item
 
 class Electronics(Item):
-    def __init__(self, id = None, type="Unknown", condition=0):
+    def __init__(self, id=None, type="Unknown", condition=0):
         # if id == None:
         #     id = uuid.uuid4().int
         # self.id = id
