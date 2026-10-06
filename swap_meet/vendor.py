@@ -11,16 +11,28 @@ class Vendor:
         return item
 
     def remove(self, matching_item):
+        found_index = None
+
         for i in range(len(self.inventory)):
             if self.inventory[i] == matching_item:
-                self.inventory.pop(i)
-                return matching_item
-        return None
+                found_index = i
+                break
+
+        if found_index is None:
+            return None
+
+        self.inventory[found_index], self.inventory[-1] = (
+            self.inventory[-1],
+            self.inventory[found_index]
+        )
+        self.inventory.pop()
+
+        return matching_item
 
     def get_by_id(self, id):
-        for item in self.inventory:
+        for item in self.inventory: 
             if item.id == id:
-                return item
+                return item 
         return None
 
     def swap_items(self, other_vendor, my_item, their_item):

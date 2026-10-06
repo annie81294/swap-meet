@@ -51,5 +51,6 @@ def test_removing_not_found_is_none():
 
     #raise Exception("Complete this test according to comments below.")
     # *********************************************************************
-    assert result == None
+    assert result is None
+    assert vendor.inventory == ["a", "b", "c"]
     # *********************************************************************

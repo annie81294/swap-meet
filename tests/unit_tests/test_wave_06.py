@@ -280,7 +280,7 @@ def test_swap_best_by_category_no_other_match_is_false():
     #raise Exception("Complete this test according to comments below.")
     # *********************************************************************
     # ****** Complete Assert Portion of this test **********
-    assert not result
+    assert result is None
     assert len(tai.inventory) == 3
     assert len(jesse.inventory) == 3
     assert item_a in tai.inventory

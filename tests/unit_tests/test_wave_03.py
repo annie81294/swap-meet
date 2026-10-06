@@ -134,5 +134,7 @@ def test_swap_items_from_their_empty_returns_false():
     #raise Exception("Complete this test according to comments below.")
     # *********************************************************************
     # ****** Complete Assert Portion of this test **********
-    assert result == False
+    assert result is False
+    assert fatimah.inventory == [item_a, item_b, item_c]
+    assert jolie.inventory == []
     # *********************************************************************
