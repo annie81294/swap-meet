@@ -65,9 +65,7 @@ class Vendor:
         return category_objects
 
     def get_best_by_category(self, category):
-        #current_best_condition = 0
         current_best_condition = None
-        #best_object_so_far = Item
         best_object_so_far = None
         category_objects = self.get_by_category(category)
         
