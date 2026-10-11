@@ -1,5 +1,14 @@
 import uuid
 
+CONDITION_DESCRIPTIONS = [
+    "It's a no from me",  
+    "It's a no from me",  
+    "Maybe",              
+    "Maybe",              
+    "Score!",             
+    "Score!",             
+]
+
 class Item:
     def __init__(self, id=None, condition=0):
         if id is None:
@@ -12,12 +21,7 @@ class Item:
         return "Item"
 
     def __str__(self):
-        return f"An object of type {self.__class__.__name__} with id {self.id}."
+        return f"An object of type {self.get_category()} with id {self.id}."
     
     def condition_description(self):
-        if self.condition < 2:
-            return "It's a no from me"
-        elif self.condition < 4:
-            return "Maybe"
-        else:
-            return"Score!"
+        return CONDITION_DESCRIPTIONS[int(self.condition)]
