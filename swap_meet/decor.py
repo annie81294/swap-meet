@@ -3,9 +3,6 @@ from swap_meet.item import Item
 
 class Decor(Item):
     def __init__(self, id=None, width=0, length=0, condition=0):
-        # if id is None:
-        #     id = uuid.uuid4().int
-        # self.id = id
         super().__init__(id)
         self.width = width
         self.length = length
@@ -16,6 +13,3 @@ class Decor(Item):
 
     def __str__(self):
         return f"{super().__str__()} It takes up a {self.width} by {self.length} sized space."
-
-    # def condition_description(self):
-    #     return Item.condition_description(self)
